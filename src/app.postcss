@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+html,
+body {
+	@apply h-full overflow-hidden;
+}
+
+:root [data-theme='wintry'] {
+}
+
+.gradient-heading {
+	@apply bg-clip-text text-transparent box-decoration-clone;
+	/* Direction */
+	@apply bg-gradient-to-br;
+	/* Color Stops */
+	@apply from-primary-500 via-tertiary-500 to-secondary-500;
+}
+/* gold-nouveau theme */
+@font-face {
+	font-family: 'Quicksand';
+	src: url('/fonts/Quicksand.ttf');
+	font-display: swap;
+}
+/* 
+@font-face {
+	font-family: 'Magilio';
+	src: url('/fonts/MagilioRegular.ttf') format('truetype');
+	font-weight: 900;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Satoshi-Variable';
+	src: url('/fonts/satoshi/Satoshi-Variable.woff2') format('woff2'),
+		url('/fonts/satoshi/Satoshi-Variable.woff') format('woff'),
+		url('/fonts/satoshi/Satoshi-Variable.ttf') format('truetype');
+	font-weight: 300 900;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Satoshi-VariableItalic';
+	src: url('/fonts/satoshi/Satoshi-VariableItalic.woff2') format('woff2'),
+		url('/fonts/satoshi/Satoshi-VariableItalic.woff') format('woff'),
+		url('/fonts/satoshi/Satoshi-VariableItalic.ttf') format('truetype');
+	font-weight: 300 900;
+	font-display: swap;
+	font-style: italic;
+} */
