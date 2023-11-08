@@ -3,6 +3,7 @@
 	import { AppShell } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
 	import MainFooter from '$lib/components/MainFooter.svelte';
+	import MainHeader from '$lib/components/MainHeader.svelte';
 
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
@@ -65,9 +66,8 @@
 
 	// Highlight JS
 	import hljs from 'highlight.js';
-	import 'highlight.js/styles/github-dark.css';
+	import 'highlight.js/styles/nord.css';
 	import { storeHighlightJs } from '@skeletonlabs/skeleton';
-	import MainHeader from '$lib/components/MainHeader.svelte';
 	storeHighlightJs.set(hljs);
 </script>
 
