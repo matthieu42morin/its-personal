@@ -44,7 +44,8 @@ const config = {
 			$lib: path.resolve('src', 'lib'),
 			$root: path.resolve('/'),
 			$src: path.resolve('src'),
-			$routes: path.resolve('src', 'routes')
+			$routes: path.resolve('src', 'routes'),
+			$content: path.resolve('src', 'content')
 		},
 		// TODO: FIX Banning external malware scripts for security and privacy of users, threw errors,
 		// csp: {
