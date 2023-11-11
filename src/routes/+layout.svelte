@@ -21,30 +21,30 @@
 
 	//Cookie, Identifiers and store
 	import Cookies from 'js-cookie';
-	import { cookies } from '$lib/constants';
 	import { page } from '$app/stores';
 	import { isEurope, removeTrailingSlash } from '$lib/utils/helpers';
 
-	onMount(() => {
-		Cookies.set(cookies.NECESSARY, 'true', {
-			expires: 365,
-			domain: '.mattmor.in'
-		});
+	// Cookie implementatiion TODO component
+	// onMount(() => {
+	// 	Cookies.set(cookies.NECESSARY, 'true', {
+	// 		expires: 365,
+	// 		domain: '.mattmor.in'
+	// 	});
 
-		if (Cookies.get(cookies.ANALYTICAL) !== 'false' && !isEurope()) {
-			Cookies.set(cookies.ANALYTICAL, 'true', {
-				expires: 365,
-				domain: '.mattmor.in'
-			});
-		}
+	// 	if (Cookies.get(cookies.ANALYTICAL) !== 'false' && !isEurope()) {
+	// 		Cookies.set(cookies.ANALYTICAL, 'true', {
+	// 			expires: 365,
+	// 			domain: '.mattmor.in'
+	// 		});
+	// 	}
 
-		if (Cookies.get(cookies.ANALYTICAL) === 'true') {
-			Cookies.set(cookies.VISITED, 'true', {
-				expires: 365,
-				domain: '.mattmor.in'
-			});
-		}
-	});
+	// 	if (Cookies.get(cookies.ANALYTICAL) === 'true') {
+	// 		Cookies.set(cookies.VISITED, 'true', {
+	// 			expires: 365,
+	// 			domain: '.mattmor.in'
+	// 		});
+	// 	}
+	// });
 
 	// Scroll to anchor
 	$: if ($page.url.pathname) {
