@@ -43,7 +43,7 @@
 </section> -->
 
 <script lang="ts">
-	import PostPreview from '$lib/components/blog/BlogLayout.svelte';
+	import PostPreview from '$lib/components/blog/PostPreview.svelte';
 	import type { PageData } from './$types';
 	import type { BlogTag } from '$lib/types/blog';
 	import { page } from '$app/stores';

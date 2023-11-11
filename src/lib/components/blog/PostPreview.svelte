@@ -3,10 +3,8 @@
 	import type { BlogPost } from '$lib/types/blog';
 
 	export let post: BlogPost;
-	export let isMostRecent: boolean = false;
 	export let type: 'blog';
-	export let layout: 'row' | 'column' = 'column';
-	export let published: boolean = true;
+	export let published: boolean;
 	export let headlineOrder: 'h3' | '' = '';
 	export let badge: string = '';
 	export let textWidth: string = '';
@@ -19,6 +17,12 @@
 	$: href = generateURL(post['href'], post.slug);
 
 	$: target = post && post['href'] && isAnExternalLink(post['href']) ? '_blank' : undefined;
+
+	const displayDate = new Date(Date.parse(post.date)).toLocaleDateString(undefined, {
+		year: 'numeric',
+		month: 'short',
+		day: 'numeric'
+	});
 </script>
 
 <a
@@ -67,11 +71,7 @@
 					<small>
 						{#if post.date}
 							<span class="date text-p-small ml-macro">
-								{new Date(Date.parse(post.date)).toLocaleDateString(undefined, {
-									year: 'numeric',
-									month: 'short',
-									day: 'numeric'
-								})}
+								{displayDate}
 							</span>
 						{/if}
 					</small>

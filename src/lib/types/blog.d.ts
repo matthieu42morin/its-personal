@@ -1,16 +1,18 @@
-import type { MarkdownMetadata } from '$lib/contents/types';
+import type { MarkdownMetadata } from '../../../src/content/types';
 
 export type BlogTag = 'Projects' | 'Blog' | 'Updates' | '';
 
 export interface BlogPost extends MarkdownMetadata {
-	title: string;
-	subtitle?: string;
-	tags?: BlogTag[];
-	modified?: string;
+	author?: string;
 	date?: string;
 	excerpt: string;
 	image: string;
 	slug?: string;
 	href?: string;
-	published: boolean;
+	tags?: BlogTag[];
+	subtitle?: string;
+	teaserImage: string;
+	title: string;
+	isNotAnActualPost?: boolean;
+	type?: string;
 }

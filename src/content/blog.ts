@@ -1,9 +1,8 @@
 import type { BlogPost } from '$lib/types/blog';
-import type { MarkdownMetadata } from '$lib/contents/types';
+import type { MarkdownMetadata } from '$content/types';
 import type { MdsvexImport } from './types';
-import { parseReadContent } from '../../content/utils';
+import { parseReadContent } from '$content/utils';
 import { error } from '@sveltejs/kit';
-
 
 export function listBlogPosts() {
 	const posts = import.meta.glob<BlogPost>('./blog/*.md', {
