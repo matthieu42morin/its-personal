@@ -8,6 +8,9 @@ dependencies:
   '@floating-ui/dom':
     specifier: 1.5.1
     version: 1.5.1
+  '@fortawesome/fontawesome-free':
+    specifier: ^6.4.2
+    version: 6.4.2
   '@threlte/core':
     specifier: ^6.1.0
     version: 6.1.0(svelte@4.2.2)(three@0.158.0)
@@ -17,6 +20,9 @@ dependencies:
   '@yushijinhun/three-minifier-rollup':
     specifier: ^0.4.0
     version: 0.4.0
+  ficons:
+    specifier: ^1.1.54
+    version: 1.1.54
   highlight.js:
     specifier: 11.8.0
     version: 11.8.0
@@ -433,6 +439,12 @@ packages:
 
   /@floating-ui/utils@0.1.6:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
+    dev: false
+
+  /@fortawesome/fontawesome-free@6.4.2:
+    resolution: {integrity: sha512-m5cPn3e2+FDCOgi1mz0RexTUvvQibBebOUlUlW0+YrMjDTPkiJ6VTKukA1GRsvRw+12KyJndNjj0O4AgTxm2Pg==}
+    engines: {node: '>=6'}
+    requiresBuild: true
     dev: false
 
   /@humanwhocodes/config-array@0.11.13:
@@ -1596,6 +1608,10 @@ packages:
     dependencies:
       reusify: 1.0.4
     dev: true
+
+  /ficons@1.1.54:
+    resolution: {integrity: sha512-l/pG5L4CJAdgOb1rLTliGf/t3QDiI54/XIbgD9t/UeWw9FJYHDApaoKcyuk3WpRqJXXiNBCdVi9QrpXpv+eL1A==}
+    dev: false
 
   /file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}

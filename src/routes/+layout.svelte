@@ -1,7 +1,13 @@
 <script lang="ts">
+	// Global Stylesheet
 	import '../app.postcss';
+	// Font Awesome
+	import '@fortawesome/fontawesome-free/css/fontawesome.css';
+	import '@fortawesome/fontawesome-free/css/brands.css';
+	import '@fortawesome/fontawesome-free/css/solid.css';
+
+	// Shell components
 	import { AppShell } from '@skeletonlabs/skeleton';
-	import { onMount } from 'svelte';
 	import MainFooter from '$lib/components/MainFooter.svelte';
 	import MainHeader from '$lib/components/MainHeader.svelte';
 
@@ -9,6 +15,9 @@
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+
+	// Svelte utils
+	import { onMount } from 'svelte';
 
 	//Cookie, Identifiers and store
 	import Cookies from 'js-cookie';
