@@ -1,4 +1,4 @@
-import { listBlogPosts } from '$lib/contents/blog';
+import { listBlogPosts } from '$content/blog';
 import RSS from 'rss';
 
 export const GET = async () => {

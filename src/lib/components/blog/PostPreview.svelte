@@ -4,10 +4,10 @@
 
 	export let post: BlogPost;
 	export let type: 'blog';
-	export let published: boolean;
-	export let headlineOrder: 'h3' | '' = '';
-	export let badge: string = '';
-	export let textWidth: string = '';
+	// export let published: boolean;
+	// export let headlineOrder: 'h3' | '' = '';
+	// export let badge: string = '';
+	// export let textWidth: string = '';
 
 	const generateURL = (href?: string, slug?: string) => {
 		if (href) return href;
