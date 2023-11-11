@@ -20,11 +20,6 @@
 				Look at my blog
 			</a>
 		</div>
-		<div class="space-y-2">
-			<p>Try editing the following:</p>
-			<p><code class="code">foo:bar</code></p>
-			<p><code class="code">ligma:ass</code></p>
-		</div>
 		<img
 			src="/animations/infinity-loop-icon.svg"
 			alt="Icon"
@@ -33,7 +28,7 @@
 		<h2 class="h2">My github contributions</h2>
 	</div>
 
-	<div class="scene">
+	<div class="scene w-full">
 		<Canvas>
 			<Scene />
 		</Canvas>
@@ -53,7 +48,7 @@
 		animation: pulse 5s cubic-bezier(0, 0, 0, 0.5) infinite, glow 5s linear infinite;
 	}
 	.scene {
-		@apply relative inset-1 w-[100%vw] h-[150px] md:h-[600px] lg:h-[800px];
+		@apply relative inset-1 w-[100%vw] h-[150px] md:h-[400px] lg:h-[600px];
 	}
 	@keyframes glow {
 		0% {

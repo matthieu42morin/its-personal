@@ -17,7 +17,7 @@
 	const colorMap = ['#0e0e0e', '#00442a', '#006d35', '#00a648', '#00d35c'];
 
 	// function to normalize the height of the cubes
-	function normalize(count: number, base = 4, offset = 2) {
+	function normalize(count: number, base = 4, offset = 6) {
 		switch (true) {
 			case count === 0:
 				return base;
@@ -28,7 +28,7 @@
 		}
 	}
 
-	// tweened value to animate the scaleY of the cubes, this should actually be Z, but
+	// tweened value to animate the Z scale of the cubes
 	const scaleZ = tweened(0, { duration: 2000, easing: quadInOut });
 
 	onMount(() => {
@@ -37,7 +37,7 @@
 </script>
 
 <T.PerspectiveCamera makeDefault position={[10, 100, 600]} fov={50}>
-	<OrbitControls enableDamping />
+	<OrbitControls enableDamping autoRotate />
 </T.PerspectiveCamera>
 
 <T.AmbientLight color="#fff" intensity={0.4} />
@@ -48,13 +48,13 @@
 	<Grid infiniteGrid sectionColor="#4a4b4a" sectionSize={40} cellSize={40} fadeDistance={800} />
 	{#if Array.isArray(contributions) && contributions.length > 0}
 		{#each contributions as row, i}
-			{#each row as day, j}
-				{#if day !== null}
-					{@const y = normalize(day.level)}
-					<T.Group position={[0, 0, 12 * i]} scale.y={$scaleZ}>
-						<T.Mesh position={[12 * j, y / 2, 0]}>
-							<T.BoxGeometry args={[10, y, 10]} />
-							<T.MeshStandardMaterial color={colorMap[day.level]} />
+			{#each row as contribution, j}
+				{#if contribution !== null}
+					{@const z = normalize(contribution.level)}
+					<T.Group position={[0, 0, 12 * i]} scale.z={$scaleZ}>
+						<T.Mesh position={[12 * j, z / 2, 0]}>
+							<T.BoxGeometry args={[10, z, 10]} />
+							<T.MeshStandardMaterial color={colorMap[contribution.level]} />
 						</T.Mesh>
 					</T.Group>
 				{/if}
