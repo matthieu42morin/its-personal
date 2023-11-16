@@ -17,10 +17,11 @@ const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: [
-		vitePreprocess(),
 		preprocess({
 			postcss: true
 		}),
+		vitePreprocess(),
+
 		// No neeed rn unless using mdsvex highlighter with svelte components
 		//mdsvexGlobalComponents({
 		// 	dir: `$lib/components/blog`,
