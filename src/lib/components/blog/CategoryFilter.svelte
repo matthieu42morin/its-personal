@@ -6,7 +6,7 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 
-	let options: BlogTag[] = ['Projects', 'Blog', 'Updates'];
+	let options: BlogTag[] = ['DevOps', 'AI', 'Updates'];
 
 	const clickHandler = (value: BlogTag) => {
 		if (value === selected) {
@@ -22,12 +22,18 @@
 </script>
 
 <section class="flex justify-center flex-col items-center {className}">
-	<p class="text-semibold mb-2 md:mb-4">Sort by category</p>
+	<header class="flex flex-col justify-center items-center">
+		<h1 class="h1">Blog</h1>
+		<span />
+	</header>
+	<h3 class="h3 mb-2 md:mb-3">Sort by category</h3>
 	<ul class="flex flex-wrap justify-center gap-2">
 		{#each options as option}
 			<li>
 				<button
-					class="btn btn-md variant-filled-primary"
+					class="chip {option === selected
+						? 'variant-filled-tertiary'
+						: 'variant-soft-primary'}"
 					on:click={() => clickHandler(option)}
 				>
 					{option}

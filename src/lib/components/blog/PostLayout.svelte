@@ -11,7 +11,7 @@
 	export let tags: string[] = [];
 </script>
 
-<article>
+<article class="text-token">
 	<div class="flex justify-center mt-4 mb-8">
 		<div class="w-full lg:w-[50rem] leading-[177.7%]">
 			<header>

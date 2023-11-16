@@ -2,8 +2,10 @@
 	import { isAnExternalLink } from '$lib/utils/helpers';
 	import type { BlogPost } from '$lib/types/blog';
 
+	export let isMostRecent: boolean = false;
+	export let type: 'blog' | 'projects';
+	export let layout: 'row' | 'column' = 'column';
 	export let post: BlogPost;
-	export let type: 'blog';
 	// export let published: boolean;
 	// export let headlineOrder: 'h3' | '' = '';
 	// export let badge: string = '';
@@ -25,58 +27,72 @@
 	});
 </script>
 
-<a
-	{href}
-	{target}
-	data-sveltekit-preload-data="hover"
-	class="card"
-	data-analytics={`{"context":"grid","variant":"preview"}`}
->
-	<div class="w-full text-token grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="grid auto-rows-auto w-full h-full text-token">
+	<a
+		{href}
+		{target}
+		data-sveltekit-preload-data="hover"
+		class="card bg-gradient-to-br variant-gradient-primary-secondary card-hover overflow-hidden flex flex-col space-y-4"
+		data-analytics={`{"context":"grid","variant":"preview"}`}
+	>
 		<!-- Detailed -->
-		<a
-			class="card bg-gradient-to-br variant-gradient-tertiary-primary card-hover overflow-hidden"
-			href="/blog/{post.slug}"
-		>
-			<header>
-				<img
-					src="/images/blog/{post.slug}/{post.image}"
-					class="bg-black/50 w-full aspect-[21/9]"
-					alt="Post"
-				/>
-			</header>
-			<div class="p-4 space-y-4">
-				<h6 class="text-2" data-toc-ignore>
-					<div class="items-center flex gap-2">
-						{#if post.tags}
-							{#each post.tags as tag}
-								<span class="chip variant-ghost-surface">{tag}</span>
-							{/each}
-						{/if}
-					</div>
-				</h6>
-				<h3 class="h3" data-toc-ignore>{post.title}</h3>
-				<article>
-					<p>
-						<!-- cspell:disable -->
-						{post.excerpt}
-						<!-- cspell:enable -->
-					</p>
-				</article>
-			</div>
-			<hr class="opacity-50" />
-			<footer class="p-4 flex justify-start items-center space-x-4">
-				<div class="flex-auto flex justify-between items-center">
-					<h6 class="font-bold" data-toc-ignore>By Matt</h6>
-					<small>
-						{#if post.date}
-							<span class="date text-p-small ml-macro">
-								{displayDate}
-							</span>
-						{/if}
-					</small>
+		<!-- <a
+				class="card "
+				href="/blog/{post.slug}"
+			> -->
+		<header>
+			<img
+				src="/images/blog/{post.slug}/{post.image}"
+				class="bg-black/50 w-full aspect-[3/2]"
+				alt="Post"
+			/>
+		</header>
+		<section class="p-4 space-y-4">
+			<h6 class="text-2" data-toc-ignore>
+				<div class="items-center flex gap-2">
+					{#if post.tags}
+						{#each post.tags as tag}
+							<span class="chip variant-ghost-tertiary">{tag}</span>
+						{/each}
+					{/if}
 				</div>
-			</footer>
-		</a>
-	</div>
-</a>
+			</h6>
+			<h3 class="h3" data-toc-ignore>{post.title}</h3>
+			<article>
+				<p>
+					<!-- cspell:disable -->
+					{post.excerpt}
+					<!-- cspell:enable -->
+				</p>
+			</article>
+		</section>
+		<hr class="opacity-50" />
+		<footer class="p-4 flex justify-between">
+			<div class="flex flex-wrap gap-2">
+				{#if post.tags && post.tags.length > 0}
+					<small>tags: </small>
+					{#each post.tags as tag}
+						<a
+							data-sveltekit-preload-data="hover"
+							href="/blog?{new URLSearchParams({ tag }).toString()}"
+						>
+							<h6 class="chip variant-ghost-surface">{tag}</h6>
+						</a>
+					{/each}
+				{/if}
+			</div>
+			<div class="mt-auto">
+				<small>
+					{#if post.date}
+						<span class="text-sm ml-4">
+							{displayDate}
+						</span>
+					{/if}
+				</small>
+			</div>
+		</footer>
+	</a>
+</div>
+
+<style lang="postcss">
+</style>
