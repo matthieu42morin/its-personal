@@ -6,12 +6,12 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 
 <div class="container h-full mx-auto flex-col justify-center items-center">
-	<div class="space-y-10 text-center flex flex-col items-center">
+	<div class="space-y-10 mt-4 text-center flex flex-col items-center">
 		<h1 class="h1">I make the wheels turn.</h1>
 		<!-- Animated Logo -->
 		<figure>
 			<section class="img-bg" />
-			<img src="/images/profile-pic.png" class="w-8 h-8 md:h-[200px] md:w-[200px]" />
+			<img src="/images/profile-pic.png" class="w-8 h-8 md:h-[200px] md:w-[200px]" alt="Profile picture" />
 		</figure>
 		<!-- / -->
 
@@ -41,13 +41,13 @@
 	}
 	.img-bg {
 		@apply absolute z-[-1] rounded-full blur-[50px] transition-all;
-		animation: pulse 5s cubic-bezier(0, 0, 0, 0.5) infinite, glow 5s linear infinite;
+		animation: pulse 5s cubic-bezier(0, 0, 0, 1) infinite, glow 5s linear infinite;
 	}
 	.scene {
 		@apply relative inset-1 w-[100%vw] h-[150px] md:h-[400px] lg:h-[600px];
 	}
 	@keyframes glow {
-		0% {
+		0% { 
 			@apply bg-primary-400/50;
 		}
 		33% {

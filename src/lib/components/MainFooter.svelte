@@ -17,7 +17,7 @@
 	>
 		<!-- <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col"> -->
 		<a class="flex items-center md:justify-start justify-center" href="/">
-			<img class="w-4 h-4 md:w-8 md:h-8" src="\images\Logo.png" />
+			<img class="w-4 h-4 md:w-8 md:h-8" src="/images/Logo.png" alt="logo" />
 			<p class="sm:pl-4 text-base sm:py-2 sm:mt-0 mt-4">© 2023 Matthieu Morin</p>
 		</a>
 	</div>
