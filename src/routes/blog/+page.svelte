@@ -1,4 +1,5 @@
 <!-- <script lang="ts">
+	import CategoryFilter from './../../lib/components/blog/CategoryFilter.svelte';
 	import { formatDate } from '$src/content/utils.js';
 	import { BlogPost } from '$lib/components/blog';
 	import * as config from '$lib/config';
@@ -44,6 +45,7 @@
 
 <script lang="ts">
 	import PostPreview from '$lib/components/blog/PostPreview.svelte';
+	import CategoryFilter from '$lib/components/blog/CategoryFilter.svelte';
 	import type { PageData } from './$types';
 	import type { BlogTag } from '$lib/types/blog';
 	import { page } from '$app/stores';
@@ -66,8 +68,12 @@
 	const displayAmount = 12;
 </script>
 
-<div class="blog-layout">
-	<div>
+<div>
+	<div class="space-y-8">
+		<header class="flex flex-col justify-center items-center">
+			<h1 class="h1 m-4">Blog</h1>
+			<CategoryFilter class="mb-2 md:mb-4" bind:selected={filter} />
+		</header>
 		<div
 			class="grid m-auto max-w-7xl w-full gap-6 grid-cols-none justify-center md:grid-cols-2 lg:grid-cols-3"
 		>
@@ -81,7 +87,7 @@
 
 	{#if posts.slice(displayAmount).length > 0}
 		<div>
-			<h2 class="mb-small text-center">Previous posts</h2>
+			<h2 class="mb-4 text-center">Previous posts</h2>
 			<div
 				class="previous grid m-auto max-w-7xl w-full gap-6 grid-cols-none justify-center md:grid-cols-2 lg:grid-cols-3"
 			>
@@ -94,3 +100,6 @@
 		</div>
 	{/if}
 </div>
+
+<style lang="postcss">
+</style>

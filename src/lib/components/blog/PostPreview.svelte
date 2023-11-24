@@ -27,37 +27,23 @@
 	});
 </script>
 
-<div class="grid auto-rows-auto w-full h-full text-token">
-	<a
-		{href}
-		{target}
-		data-sveltekit-preload-data="hover"
-		class="card bg-gradient-to-br variant-gradient-primary-secondary card-hover overflow-hidden flex flex-col space-y-4"
-		data-analytics={`{"context":"grid","variant":"preview"}`}
-	>
-		<!-- Detailed -->
-		<!-- <a
-				class="card "
-				href="/blog/{post.slug}"
-			> -->
+<a
+	{href}
+	{target}
+	data-sveltekit-preload-data="hover"
+	class="card bg-gradient-to-br variant-gradient-primary-tertiary card-hover overflow-hidden flex flex-col space-y-4"
+	data-analytics={`{"context":"grid","variant":"preview"}`}
+>
+	<div class="flex flex-col justify-between auto-rows-auto w-full h-full text-token">
 		<header>
 			<img
 				src="/images/blog/{post.slug}/{post.image}"
-				class="bg-black/50 w-full aspect-[3/2]"
+				class="bg-black/200 w-full aspect-[3/2]"
 				alt="Post"
 			/>
 		</header>
 		<section class="p-4 space-y-4">
-			<h6 class="text-2" data-toc-ignore>
-				<div class="items-center flex gap-2">
-					{#if post.tags}
-						{#each post.tags as tag}
-							<span class="chip variant-ghost-tertiary">{tag}</span>
-						{/each}
-					{/if}
-				</div>
-			</h6>
-			<h3 class="h3" data-toc-ignore>{post.title}</h3>
+			<h2 class="h2" data-toc-ignore>{post.title}</h2>
 			<article>
 				<p>
 					<!-- cspell:disable -->
@@ -66,33 +52,35 @@
 				</p>
 			</article>
 		</section>
-		<hr class="opacity-50" />
-		<footer class="p-4 flex justify-between">
-			<div class="flex flex-wrap gap-2">
-				{#if post.tags && post.tags.length > 0}
-					<small>tags: </small>
-					{#each post.tags as tag}
-						<a
-							data-sveltekit-preload-data="hover"
-							href="/blog?{new URLSearchParams({ tag }).toString()}"
-						>
-							<h6 class="chip variant-ghost-surface">{tag}</h6>
-						</a>
-					{/each}
-				{/if}
-			</div>
-			<div class="mt-auto">
-				<small>
-					{#if post.date}
-						<span class="text-sm ml-4">
-							{displayDate}
-						</span>
+		<section>
+			<hr class="opacity-30 bg-tertiary-500" />
+			<footer class="p-4 flex justify-between">
+				<div class="flex flex-wrap gap-2">
+					{#if post.tags && post.tags.length > 0}
+						<small>tags: </small>
+						{#each post.tags as tag}
+							<a
+								data-sveltekit-preload-data="hover"
+								href="/blog?{new URLSearchParams({ tag }).toString()}"
+							>
+								<h6 class="chip variant-filled-tertiary text-token">{tag}</h6>
+							</a>
+						{/each}
 					{/if}
-				</small>
-			</div>
-		</footer>
-	</a>
-</div>
+				</div>
+				<div class="mt-auto">
+					<small>
+						{#if post.date}
+							<span class="text-sm ml-4">
+								{displayDate}
+							</span>
+						{/if}
+					</small>
+				</div>
+			</footer>
+		</section>
+	</div>
+</a>
 
 <style lang="postcss">
 </style>

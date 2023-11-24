@@ -22,10 +22,6 @@
 </script>
 
 <section class="flex justify-center flex-col items-center {className}">
-	<header class="flex flex-col justify-center items-center">
-		<h1 class="h1">Blog</h1>
-		<span />
-	</header>
 	<h3 class="h3 mb-2 md:mb-3">Sort by category</h3>
 	<ul class="flex flex-wrap justify-center gap-2">
 		{#each options as option}

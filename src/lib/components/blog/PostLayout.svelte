@@ -11,26 +11,15 @@
 	export let tags: string[] = [];
 </script>
 
-<article class="text-token">
-	<div class="flex justify-center mt-4 mb-8">
-		<div class="w-full lg:w-[50rem] leading-[177.7%]">
-			<header>
-				<img
-					src="/images/{imagesDirectoryName}/{slug}/{image}"
-					alt={`${title}`}
-					class=" bg-black/50 w-full aspect-[21/9] max-h-[540px] rounded-tr-[1.3rem]"
-				/>
-			</header>
-			<div class="p-4 space-y-4">
-				<h3 class="h3" data-toc-ignore>{title}</h3>
-				<div class="prose max-w-none text-base">
-					<slot />
-				</div>
-			</div>
-		</div>
-	</div>
-	<hr class="opacity-50" />
-	<footer class="p-4 flex justify-start items-center space-x-4">
+<article class="flex justify-center mt-4 mb-8">
+	<div class=" w-full lg:w-[50rem] leading-[177.7%]">
+		<header>
+			<img
+				src="/images/{imagesDirectoryName}/{slug}/{image}"
+				alt={`${title}`}
+				class=" bg-black/50 w-full aspect-[21/9] max-h-[540px] rounded-t-[1.3rem]"
+			/>
+		</header>
 		<div class="flex-auto flex justify-between items-center">
 			{#if tags && tags.length > 0}
 				<div class="flex mb-2 items-center gap-2">
@@ -46,7 +35,15 @@
 			{/if}
 			<small>On {formatDate(date)}</small>
 		</div>
-	</footer>
+		<div class="space-y-4 text-token">
+			<h2 class="h2" data-toc-ignore>{title}</h2>
+			<div class="prose max-w-none text-token">
+				<slot />
+			</div>
+		</div>
+	</div>
+	<hr class="opacity-50" />
+	<footer class="p-4 flex justify-start items-center space-x-4" />
 </article>
 
 <style lang="postcss">
