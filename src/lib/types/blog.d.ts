@@ -1,6 +1,6 @@
 import type { MarkdownMetadata } from '../../../src/content/types';
 
-export type BlogTag = 'Projects' | 'Blog' | 'Updates' | '';
+export type BlogTag = 'DevOps' | 'AI' | 'Updates' | '';
 
 export interface BlogPost extends MarkdownMetadata {
 	author?: string;

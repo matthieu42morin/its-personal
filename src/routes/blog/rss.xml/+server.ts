@@ -1,5 +1,6 @@
 import { listBlogPosts } from '$content/blog';
 import RSS from 'rss';
+import type { BlogPost } from '$lib/types/blog';
 
 export const GET = async () => {
 	const posts = listBlogPosts();
@@ -12,23 +13,23 @@ export const GET = async () => {
     */
 
 	const feed = new RSS({
-		title: "Matt's C4vern",
-		description: "Matt's personal blog about ventures in tech.",
+		title: "Matt's Tech Basement",
+		description: 'A personal blog about ventures in tech.',
 		copyright: `Copyright © ${new Date().getFullYear()} Matt Morin. All rights reserved`,
 		ttl: 1800,
 		feed_url: 'https://www.mattmor.in/blog',
 		site_url: 'https://www.mattmor.in',
 		image_url: 'https://www.mattmor.in/favicon192.png',
 		language: 'en',
-		categories: ["Matt's C4vern updates", 'Tech', 'Disruption', 'DevOps', 'Ventures'],
+		categories: ["Matt's Tech Basement updates", 'Tech', 'Disruption', 'DevOps', 'Ventures'],
 		pubDate: new Date().toUTCString(),
 		generator: 'Matt Morin'
 	});
 
-	// This code creates an RSS feed. It does so by iterating over all posts and
+	// This creates an RSS feed. It does so by iterating over all posts and
 	// adding each post to the feed.
 
-	posts.forEach((post: any) => {
+	posts.forEach((post: BlogPost) => {
 		feed.item({
 			title: post.title,
 			description: post.excerpt,
